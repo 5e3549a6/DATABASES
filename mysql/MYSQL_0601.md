@@ -98,7 +98,25 @@ FROM products
 WHERE prod_price BETWEEN 5 AND 10;
 ```
 
+mysql的逻辑操作符如下：
 
+AND, NOT,  IN,  OR,  IS.
+
+其中IN的用法比较特殊
+
+```MYSQL
+SELECT prod_name, prod_price
+FROM products
+WHERE vend_id in (1002,1003)
+ORDER BY prod_name;
+
+# 相同的语句如下
+SELECT prod_name, prod_price
+FROM products
+WHERE vend_id = 1002 OR vend_id = 1003
+ORDER BY prod_name;
+
+```
 
 空值检查
 
